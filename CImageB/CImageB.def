@@ -1,0 +1,5 @@
+LIBRARY CImageB
+EXPORTS
+	CxLoadImage			@1
+	CxSaveImage			@2
+	FreeCxImageBuffer	@3

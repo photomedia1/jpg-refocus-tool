@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26104477-A39D-4420-BA90-98F87BF80544}</ProjectGuid>
+    <RootNamespace>CImageB</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CIMAGEB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>CImageB.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CIMAGEB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>CImageB.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CImageB.cpp" />
+    <ClCompile Include="CxImgTest.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="memmgr.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CxImage\tif_xfile.cpp" />
+    <ClCompile Include="CxImage\ximabmp.cpp" />
+    <ClCompile Include="CxImage\ximadsp.cpp" />
+    <ClCompile Include="CxImage\ximaenc.cpp" />
+    <ClCompile Include="CxImage\ximaexif.cpp" />
+    <ClCompile Include="CxImage\ximage.cpp" />
+    <ClCompile Include="CxImage\ximagif.cpp" />
+    <ClCompile Include="CxImage\ximahist.cpp" />
+    <ClCompile Include="CxImage\ximaico.cpp" />
+    <ClCompile Include="CxImage\ximainfo.cpp" />
+    <ClCompile Include="CxImage\ximaint.cpp" />
+    <ClCompile Include="CxImage\ximajas.cpp" />
+    <ClCompile Include="CxImage\ximajbg.cpp" />
+    <ClCompile Include="CxImage\ximajpg.cpp" />
+    <ClCompile Include="CxImage\ximalpha.cpp" />
+    <ClCompile Include="CxImage\ximalyr.cpp" />
+    <ClCompile Include="CxImage\ximamng.cpp" />
+    <ClCompile Include="CxImage\ximapal.cpp" />
+    <ClCompile Include="CxImage\ximapcx.cpp" />
+    <ClCompile Include="CxImage\ximapng.cpp" />
+    <ClCompile Include="CxImage\ximapsd.cpp" />
+    <ClCompile Include="CxImage\ximaraw.cpp" />
+    <ClCompile Include="CxImage\ximasel.cpp" />
+    <ClCompile Include="CxImage\ximaska.cpp" />
+    <ClCompile Include="CxImage\ximatga.cpp" />
+    <ClCompile Include="CxImage\ximath.cpp" />
+    <ClCompile Include="CxImage\ximatif.cpp" />
+    <ClCompile Include="CxImage\ximatran.cpp" />
+    <ClCompile Include="CxImage\ximawbmp.cpp" />
+    <ClCompile Include="CxImage\ximawmf.cpp" />
+    <ClCompile Include="CxImage\ximawnd.cpp" />
+    <ClCompile Include="CxImage\xmemfile.cpp" />
+    <ClCompile Include="jpeg\jaricom.cpp" />
+    <ClCompile Include="jpeg\jcapimin.cpp" />
+    <ClCompile Include="jpeg\jcapistd.cpp" />
+    <ClCompile Include="jpeg\jcarith.cpp" />
+    <ClCompile Include="jpeg\jccoefct.cpp" />
+    <ClCompile Include="jpeg\jccolor.cpp" />
+    <ClCompile Include="jpeg\jcdctmgr.cpp" />
+    <ClCompile Include="jpeg\jchuff.cpp" />
+    <ClCompile Include="jpeg\jcinit.cpp" />
+    <ClCompile Include="jpeg\jcmainct.cpp" />
+    <ClCompile Include="jpeg\jcmarker.cpp" />
+    <ClCompile Include="jpeg\jcmaster.cpp" />
+    <ClCompile Include="jpeg\jcomapi.cpp" />
+    <ClCompile Include="jpeg\jcparam.cpp" />
+    <ClCompile Include="jpeg\jcprepct.cpp" />
+    <ClCompile Include="jpeg\jcsample.cpp" />
+    <ClCompile Include="jpeg\jctrans.cpp" />
+    <ClCompile Include="jpeg\jdapimin.cpp" />
+    <ClCompile Include="jpeg\jdapistd.cpp" />
+    <ClCompile Include="jpeg\jdarith.cpp" />
+    <ClCompile Include="jpeg\jdatadst.cpp" />
+    <ClCompile Include="jpeg\jdatasrc.cpp" />
+    <ClCompile Include="jpeg\jdcoefct.cpp" />
+    <ClCompile Include="jpeg\jdcolor.cpp" />
+    <ClCompile Include="jpeg\jddctmgr.cpp" />
+    <ClCompile Include="jpeg\jdhuff.cpp" />
+    <ClCompile Include="jpeg\jdinput.cpp" />
+    <ClCompile Include="jpeg\jdmainct.cpp" />
+    <ClCompile Include="jpeg\jdmarker.cpp" />
+    <ClCompile Include="jpeg\jdmaster.cpp" />
+    <ClCompile Include="jpeg\jdmerge.cpp" />
+    <ClCompile Include="jpeg\jdpostct.cpp" />
+    <ClCompile Include="jpeg\jdsample.cpp" />
+    <ClCompile Include="jpeg\jdtrans.cpp" />
+    <ClCompile Include="jpeg\jerror.cpp" />
+    <ClCompile Include="jpeg\jfdctflt.cpp" />
+    <ClCompile Include="jpeg\jfdctfst.cpp" />
+    <ClCompile Include="jpeg\jfdctint.cpp" />
+    <ClCompile Include="jpeg\jidctflt.cpp" />
+    <ClCompile Include="jpeg\jidctfst.cpp" />
+    <ClCompile Include="jpeg\jidctint.cpp" />
+    <ClCompile Include="jpeg\jmemmgr.cpp" />
+    <ClCompile Include="jpeg\jmemnobs.cpp" />
+    <ClCompile Include="jpeg\jquant1.cpp" />
+    <ClCompile Include="jpeg\jquant2.cpp" />
+    <ClCompile Include="jpeg\jutils.cpp" />
+    <ClCompile Include="png\png.cpp" />
+    <ClCompile Include="png\pngerror.cpp" />
+    <ClCompile Include="png\pngget.cpp" />
+    <ClCompile Include="png\pngmem.cpp" />
+    <ClCompile Include="png\pngpread.cpp" />
+    <ClCompile Include="png\pngread.cpp" />
+    <ClCompile Include="png\pngrio.cpp" />
+    <ClCompile Include="png\pngrtran.cpp" />
+    <ClCompile Include="png\pngrutil.cpp" />
+    <ClCompile Include="png\pngset.cpp" />
+    <ClCompile Include="png\pngtrans.cpp" />
+    <ClCompile Include="png\pngwio.cpp" />
+    <ClCompile Include="png\pngwrite.cpp" />
+    <ClCompile Include="png\pngwtran.cpp" />
+    <ClCompile Include="png\pngwutil.cpp" />
+    <ClCompile Include="tiff\tif_aux.cpp" />
+    <ClCompile Include="tiff\tif_close.cpp" />
+    <ClCompile Include="tiff\tif_codec.cpp" />
+    <ClCompile Include="tiff\tif_color.cpp" />
+    <ClCompile Include="tiff\tif_compress.cpp" />
+    <ClCompile Include="tiff\tif_dir.cpp" />
+    <ClCompile Include="tiff\tif_dirinfo.cpp" />
+    <ClCompile Include="tiff\tif_dirread.cpp" />
+    <ClCompile Include="tiff\tif_dirwrite.cpp" />
+    <ClCompile Include="tiff\tif_dumpmode.cpp" />
+    <ClCompile Include="tiff\tif_error.cpp" />
+    <ClCompile Include="tiff\tif_extension.cpp" />
+    <ClCompile Include="tiff\tif_fax3.cpp" />
+    <ClCompile Include="tiff\tif_fax3sm.cpp" />
+    <ClCompile Include="tiff\tif_flush.cpp" />
+    <ClCompile Include="tiff\tif_getimage.cpp" />
+    <ClCompile Include="tiff\tif_jbig.cpp" />
+    <ClCompile Include="tiff\tif_jpeg.cpp" />
+    <ClCompile Include="tiff\tif_luv.cpp" />
+    <ClCompile Include="tiff\tif_lzw.cpp" />
+    <ClCompile Include="tiff\tif_next.cpp" />
+    <ClCompile Include="tiff\tif_ojpeg.cpp" />
+    <ClCompile Include="tiff\tif_open.cpp" />
+    <ClCompile Include="tiff\tif_packbits.cpp" />
+    <ClCompile Include="tiff\tif_pixarlog.cpp" />
+    <ClCompile Include="tiff\tif_predict.cpp" />
+    <ClCompile Include="tiff\tif_print.cpp" />
+    <ClCompile Include="tiff\tif_read.cpp" />
+    <ClCompile Include="tiff\tif_strip.cpp" />
+    <ClCompile Include="tiff\tif_swab.cpp" />
+    <ClCompile Include="tiff\tif_thunder.cpp" />
+    <ClCompile Include="tiff\tif_tile.cpp" />
+    <ClCompile Include="tiff\tif_version.cpp" />
+    <ClCompile Include="tiff\tif_warning.cpp" />
+    <ClCompile Include="tiff\tif_write.cpp" />
+    <ClCompile Include="tiff\tif_zip.cpp" />
+    <ClCompile Include="zlib\adler32.cpp" />
+    <ClCompile Include="zlib\compress.cpp" />
+    <ClCompile Include="zlib\crc32.cpp" />
+    <ClCompile Include="zlib\deflate.cpp" />
+    <ClCompile Include="zlib\infback.cpp" />
+    <ClCompile Include="zlib\inffast.cpp" />
+    <ClCompile Include="zlib\inflate.cpp" />
+    <ClCompile Include="zlib\inftrees.cpp" />
+    <ClCompile Include="zlib\trees.cpp" />
+    <ClCompile Include="zlib\uncompr.cpp" />
+    <ClCompile Include="zlib\zutil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CImageB.def" />
+    <None Include="jpeg\jdosaobj.txt" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CxImgA.h" />
+    <ClInclude Include="memmgr.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="CxImage\stdint.h" />
+    <ClInclude Include="CxImage\xfile.h" />
+    <ClInclude Include="CxImage\ximabmp.h" />
+    <ClInclude Include="CxImage\ximacfg.h" />
+    <ClInclude Include="CxImage\ximadef.h" />
+    <ClInclude Include="CxImage\ximage.h" />
+    <ClInclude Include="CxImage\ximagif.h" />
+    <ClInclude Include="CxImage\ximaico.h" />
+    <ClInclude Include="CxImage\ximaiter.h" />
+    <ClInclude Include="CxImage\ximajas.h" />
+    <ClInclude Include="CxImage\ximajbg.h" />
+    <ClInclude Include="CxImage\ximajpg.h" />
+    <ClInclude Include="CxImage\ximamng.h" />
+    <ClInclude Include="CxImage\ximapcx.h" />
+    <ClInclude Include="CxImage\ximapng.h" />
+    <ClInclude Include="CxImage\ximapsd.h" />
+    <ClInclude Include="CxImage\ximaraw.h" />
+    <ClInclude Include="CxImage\ximaska.h" />
+    <ClInclude Include="CxImage\ximatga.h" />
+    <ClInclude Include="CxImage\ximath.h" />
+    <ClInclude Include="CxImage\ximatif.h" />
+    <ClInclude Include="CxImage\ximawbmp.h" />
+    <ClInclude Include="CxImage\ximawmf.h" />
+    <ClInclude Include="CxImage\xiofile.h" />
+    <ClInclude Include="CxImage\xmemfile.h" />
+    <ClInclude Include="jpeg\jconfig.h" />
+    <ClInclude Include="jpeg\jdct.h" />
+    <ClInclude Include="jpeg\jerror.h" />
+    <ClInclude Include="jpeg\jinclude.h" />
+    <ClInclude Include="jpeg\jmemsys.h" />
+    <ClInclude Include="jpeg\jpegint.h" />
+    <ClInclude Include="jpeg\jpeglib.h" />
+    <ClInclude Include="jpeg\jversion.h" />
+    <ClInclude Include="png\png.h" />
+    <ClInclude Include="png\pngconf.h" />
+    <ClInclude Include="png\pnginfo.h" />
+    <ClInclude Include="png\pngpriv.h" />
+    <ClInclude Include="png\pngstruct.h" />
+    <ClInclude Include="tiff\t4.h" />
+    <ClInclude Include="tiff\tif_config.h" />
+    <ClInclude Include="tiff\tif_config.wince.h" />
+    <ClInclude Include="tiff\tif_dir.h" />
+    <ClInclude Include="tiff\tif_fax3.h" />
+    <ClInclude Include="tiff\tif_predict.h" />
+    <ClInclude Include="tiff\tiff.h" />
+    <ClInclude Include="tiff\tiffconf.h" />
+    <ClInclude Include="tiff\tiffconf.wince.h" />
+    <ClInclude Include="tiff\tiffio.h" />
+    <ClInclude Include="tiff\tiffio.hxx" />
+    <ClInclude Include="tiff\tiffiop.h" />
+    <ClInclude Include="tiff\tiffvers.h" />
+    <ClInclude Include="tiff\uvcode.h" />
+    <ClInclude Include="zlib\crc32.h" />
+    <ClInclude Include="zlib\inffast.h" />
+    <ClInclude Include="zlib\inffixed.h" />
+    <ClInclude Include="zlib\inflate.h" />
+    <ClInclude Include="zlib\inftrees.h" />
+    <ClInclude Include="zlib\trees.h" />
+    <ClInclude Include="zlib\zconf.h" />
+    <ClInclude Include="zlib\zlib.h" />
+    <ClInclude Include="zlib\zutil.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
